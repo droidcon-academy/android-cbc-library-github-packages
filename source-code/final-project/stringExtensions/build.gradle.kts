@@ -1,4 +1,3 @@
-import com.android.build.gradle.LibraryExtension
 import groovy.util.Node
 import java.io.FileInputStream
 import java.util.Properties
@@ -105,8 +104,6 @@ afterEvaluate {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
