@@ -16,6 +16,19 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
+        val propertiesFile = File("local.properties")
+        val githubProperties = java.util.Properties()
+        githubProperties.load(java.io.FileInputStream(propertiesFile))
+
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/droidcon-academy/android-cbc-library-github-packages")
+            credentials {
+                username = githubProperties["user"] as String?
+                password = githubProperties["key"] as String?
+            }
+        }
     }
 }
 
