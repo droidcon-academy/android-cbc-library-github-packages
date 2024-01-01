@@ -56,16 +56,14 @@ fun StringExtensionDemo() {
     val password = "password"
     val email = "mohi@example.com"
 
-    val results = listOf(
-        "User Name: $userName",
-        "Password: $password",
-        "Email: $email",
-    )
+    Text(text = "User Name: $userName")
+    Spacer(modifier = Modifier.height(8.dp))
 
-    for (text in results) {
-        Text(text = text)
-        Spacer(modifier = Modifier.height(8.dp))
-    }
+    Text(text = "Password: $password")
+    Spacer(modifier = Modifier.height(8.dp))
+
+    Text(text = "Email: $email")
+    Spacer(modifier = Modifier.height(8.dp))
 }
 
 @Preview(showBackground = true)
