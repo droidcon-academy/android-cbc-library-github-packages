@@ -16,9 +16,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.sunnat629.githubpackage.ui.theme.GithubPackageTheme
+import dev.sunnat629.stringextension.StringExtension
+import dev.sunnat629.stringextension.StringExtension.encodeIntoBase64
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,8 +56,10 @@ fun RootView() {
 @Composable
 fun StringExtensionDemo() {
     val userName = "Mohi Us Sunnat"
-    val password = "password"
-    val email = "mohi@example.com"
+    val password = "password".encodeIntoBase64()
+    val email = "mohiexample.com"
+
+    val color = if (StringExtension.isEmail(email)) Color.Black else Color.Red
 
     Text(text = "User Name: $userName")
     Spacer(modifier = Modifier.height(8.dp))
@@ -62,7 +67,10 @@ fun StringExtensionDemo() {
     Text(text = "Password: $password")
     Spacer(modifier = Modifier.height(8.dp))
 
-    Text(text = "Email: $email")
+    Text(
+        text = "Email: $email",
+        color = color
+    )
     Spacer(modifier = Modifier.height(8.dp))
 }
 
