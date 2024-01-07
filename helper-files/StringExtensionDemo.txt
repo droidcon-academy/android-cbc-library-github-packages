@@ -1,0 +1,41 @@
+@Composable
+fun RootView() {
+    GithubPackageTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.Start,
+                verticalArrangement = Arrangement.Center
+            ) {
+                EmailValidatorUI()
+            }
+        }
+    }
+}
+
+
+@Composable
+fun StringExtensionDemo() {
+    val userName = "Mohi Us Sunnat"
+    val password = "password".encodeIntoBase64()
+    val email = "mohiexample.com"
+
+    val color = if (StringExtension.isEmail(email)) Color.Black else Color.Red
+
+    Text(text = "User Name: $userName")
+    Spacer(modifier = Modifier.height(8.dp))
+
+    Text(text = "Password: $password")
+    Spacer(modifier = Modifier.height(8.dp))
+
+    Text(
+        text = "Email: $email",
+        color = color
+    )
+    Spacer(modifier = Modifier.height(8.dp))
+}
