@@ -85,6 +85,27 @@ fun EmailValidatorUI() {
     }
 }
 
+@Composable
+fun StringExtensionDemo() {
+    val userName = "Mohi Us Sunnat"
+    val password = "password".encodeIntoBase64()
+    val email = "mohiexample.com"
+
+    val color = if (StringExtension.isEmail(email)) Color.Black else Color.Red
+
+    Text(text = "User Name: $userName")
+    Spacer(modifier = Modifier.height(8.dp))
+
+    Text(text = "Password: $password")
+    Spacer(modifier = Modifier.height(8.dp))
+
+    Text(
+        text = "Email: $email",
+        color = color
+    )
+    Spacer(modifier = Modifier.height(8.dp))
+}
+
 @Preview(showBackground = true)
 @Composable
 fun GithubPackagePreview() {
