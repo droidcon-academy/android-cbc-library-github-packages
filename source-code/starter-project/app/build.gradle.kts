@@ -51,10 +51,7 @@ android {
 
 dependencies {
 
-    // To use the module as Github Package
-    implementation("droidcon-academy:stringextensions:0.0.2")
-    // To use the local module
-//    implementation(project(":StringExtension"))
+    implementation(project(":StringExtension"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
