@@ -32,6 +32,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GithubPackage"
 include(":app")
-include(":StringExtension")
